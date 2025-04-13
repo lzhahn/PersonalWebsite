@@ -40,7 +40,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white">
-                Hi, I'm <span className="text-blue-600 dark:text-blue-400">Lucas Hahn</span>
+                Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Lucas Hahn</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200">
                 Software Engineer & Web Developer
@@ -208,7 +208,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white dark:text-white">Interested in working together?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            I'm currently available for freelance work and open to new opportunities.
+            I&apos;m currently available for freelance work and open to new opportunities.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center max-w-md mx-auto">
             <Dialog.Root>
@@ -222,7 +222,7 @@ export default function Home() {
                 <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-[90vw] max-w-md max-h-[85vh] overflow-y-auto data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut">
                   <Dialog.Title className="text-xl font-bold mb-4 dark:text-white">Get in Touch</Dialog.Title>
                   <Dialog.Description className="text-gray-600 dark:text-gray-300 mb-6">
-                    Fill out the form below and I'll get back to you as soon as possible.
+                    Fill out the form below and I&apos;ll get back to you as soon as possible.
                   </Dialog.Description>
                   
                   <form onSubmit={handleSubmit} className="space-y-4">
