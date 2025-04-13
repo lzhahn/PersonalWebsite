@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { getAllProjects } from "@/lib/data/projects";
 import { getAllSkills } from "@/lib/data/resume";
 import BackgroundPattern from "@/components/BackgroundPattern";
