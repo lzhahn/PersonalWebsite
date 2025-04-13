@@ -1,43 +1,50 @@
+"use client";
+
 import Link from 'next/link';
 import React from 'react';
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import { Flex, Text, Box } from '@radix-ui/themes';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 bg-white dark:bg-gray-900 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
-          Lucas Hahn
+    <Box className="sticky top-0 z-10 bg-white dark:bg-gray-900 shadow-sm">
+      <Flex className="container mx-auto px-4 py-4" justify="between" align="center">
+        <Link href="/" className="text-xl font-bold dark:text-white">
+          <Text size="5" weight="bold">Lucas Hahn</Text>
         </Link>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <Link href="/" className="hover:text-blue-500 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-blue-500 transition-colors">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:text-blue-500 transition-colors">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/resume" className="hover:text-blue-500 transition-colors">
-                Resume
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-blue-500 transition-colors">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        <NavigationMenu.Root className="relative">
+          <NavigationMenu.List className="flex space-x-6">
+            <NavigationMenu.Item>
+              <NavigationMenu.Link asChild>
+                <a href="#hero" className="hover:text-blue-500 transition-colors dark:text-white">
+                  <Text size="2">Home</Text>
+                </a>
+              </NavigationMenu.Link>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <NavigationMenu.Link asChild>
+                <a href="#projects" className="hover:text-blue-500 transition-colors dark:text-white">
+                  <Text size="2">Projects</Text>
+                </a>
+              </NavigationMenu.Link>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <NavigationMenu.Link asChild>
+                <a href="#skills" className="hover:text-blue-500 transition-colors dark:text-white">
+                  <Text size="2">Skills</Text>
+                </a>
+              </NavigationMenu.Link>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <NavigationMenu.Link asChild>
+                <a href="#contact" className="hover:text-blue-500 transition-colors dark:text-white">
+                  <Text size="2">Contact</Text>
+                </a>
+              </NavigationMenu.Link>
+            </NavigationMenu.Item>
+          </NavigationMenu.List>
+        </NavigationMenu.Root>
+      </Flex>
+    </Box>
   );
 }

@@ -10,35 +10,31 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'project-1',
-    title: 'Personal Website',
-    description: 'A responsive personal website built with Next.js and Tailwind CSS to showcase my work and experience.',
-    imageSrc: '/images/projects/personal-website.jpg',
-    link: 'https://github.com/yourusername/personal-website',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript']
+    title: 'AWS Skillbuilder Checkout Modernization',
+    description: 'Designed and implemented a full-stack checkout system using AWS Lambdas and AppSync GraphQL that reduced barriers to purchase, leading to a 325% month-over-month gain in purchases.',
+    imageSrc: '/images/projects/checkout-system.jpg',
+    tags: ['AWS Lambda', 'AppSync', 'GraphQL', 'TypeScript', 'DynamoDB']
   },
   {
     id: 'project-2',
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce platform with product management, cart functionality, and payment processing.',
-    imageSrc: '/images/projects/ecommerce.jpg',
-    link: 'https://github.com/yourusername/ecommerce',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express']
+    title: 'AWS Cloud Institute',
+    description: 'Developed a platform enabling students to purchase educational packages for premium courses. Created three purchasing tiers that boosted quarterly revenue by over $250,000.',
+    imageSrc: '/images/projects/cloud-institute.jpg',
+    tags: ['AWS', 'TypeScript', 'React', 'CloudWatch', 'CloudTrail']
   },
   {
     id: 'project-3',
-    title: 'Task Management App',
-    description: 'A productivity application for managing tasks, projects, and deadlines with team collaboration features.',
-    imageSrc: '/images/projects/task-app.jpg',
-    link: 'https://github.com/yourusername/task-app',
-    tags: ['Vue.js', 'Firebase', 'Vuetify']
+    title: 'Woot Modernization',
+    description: 'Integrated lightweight GraphQL Supergraph infrastructure into an existing monolithic ecosystem, migrating 10,000s of active users with no downtime to Serverless Lambda Infrastructure.',
+    imageSrc: '/images/projects/woot-modernization.jpg',
+    tags: ['GraphQL', 'AWS Lambda', 'TypeScript', 'Serverless']
   },
   {
     id: 'project-4',
-    title: 'Weather Dashboard',
-    description: 'A weather dashboard that displays current conditions and forecasts for multiple locations.',
-    imageSrc: '/images/projects/weather-app.jpg',
-    link: 'https://github.com/yourusername/weather-dashboard',
-    tags: ['JavaScript', 'API Integration', 'CSS3']
+    title: 'Internal Admin Training Management',
+    description: 'Developed a front-end application to facilitate and oversee individual course registrations. Integrated six API endpoints to streamline the assignment of unique training sessions.',
+    imageSrc: '/images/projects/training-management.jpg',
+    tags: ['React', 'TypeScript', 'API Integration', 'AWS']
   }
 ];
 

@@ -26,41 +26,62 @@ export interface Skill {
 export const experiences: Experience[] = [
   {
     id: 'exp-1',
-    title: 'Senior Software Engineer',
-    company: 'Tech Company',
-    location: 'San Francisco, CA',
-    startDate: '2021-06',
+    title: 'Software Engineer II',
+    company: 'AWS, Amazon',
+    location: 'Seattle, WA',
+    startDate: '2023-01',
     endDate: null,
     description: [
-      'Led development of key features for the company\'s flagship product',
-      'Mentored junior developers and conducted code reviews',
-      'Implemented CI/CD pipelines that reduced deployment time by 40%'
+      'Developed a front-end application to facilitate and oversee individual course registrations',
+      'Designed a Full-Stack Checkout system using AWS Lambdas and AppSync GraphQL',
+      'Reduced barriers to purchase leading to a 325% month over month gain in purchases',
+      'Developed a platform where students can buy educational packages to enroll in premium courses',
+      'Created three purchasing tiers that boosted quarterly revenue by over $250,000',
+      'Integrated six API endpoints to streamline the assignment of unique training sessions'
     ]
   },
   {
     id: 'exp-2',
     title: 'Software Engineer',
-    company: 'Startup Inc.',
-    location: 'San Francisco, CA',
-    startDate: '2018-03',
-    endDate: '2021-05',
+    company: 'AWS, Amazon',
+    location: 'Seattle, WA',
+    startDate: '2023-04',
+    endDate: '2023-01',
     description: [
-      'Developed and maintained web applications using React and Node.js',
-      'Collaborated with product managers to define and implement new features',
-      'Optimized database queries resulting in 30% performance improvement'
+      'Delivered over 500+ digital AWS trainings to upscale our customers\' knowledge',
+      'Established API contracts, enabling efficient processing of thousands of data points per second',
+      'Trained three engineers to quickly onboard onto feature work within EC2 enabled services',
+      'Collaborated with Quality Assurance to define detailed acceptance tests with verification steps',
+      'Designed a detailed multi-step launch strategy to deploy eight back end and four front end services'
     ]
   },
   {
     id: 'exp-3',
-    title: 'Junior Developer',
-    company: 'Small Agency',
-    location: 'San Francisco, CA',
-    startDate: '2016-09',
-    endDate: '2018-02',
+    title: 'Software Engineer',
+    company: 'Woot Inc., Amazon',
+    location: 'Seattle, WA',
+    startDate: '2021-07',
+    endDate: '2023-04',
     description: [
-      'Built responsive websites for various clients',
-      'Implemented front-end designs using HTML, CSS, and JavaScript',
-      'Participated in client meetings and requirement gathering'
+      'Integrated lightweight GraphQL Supergraph infrastructure into an existing monolithic ecosystem',
+      'Migrated 10,000s of active users with no downtime to Serverless Lambda Infrastructure',
+      'Reduced latency of customer experience by 60% leveraging serverless infrastructure',
+      'Designed monitoring dashboards to reduce average issue time to resolution by 50%',
+      'Facilitated communication between teams to shift from .NET EC2 instances to Typescript Lambdas'
+    ]
+  },
+  {
+    id: 'exp-4',
+    title: 'Lead Organizer/Treasurer',
+    company: 'Launchpad Mentorship Program',
+    location: 'West Lafayette, IN',
+    startDate: '2020-07',
+    endDate: '2021-05',
+    description: [
+      'Scheduled large-scale meetings with experts and mentees to align on growth goals and mentorship fit',
+      'Conducted in-depth candidate interviews for mentorship roles',
+      'Monitored 30+ mentor-mentee relationships to drive progress in mentee-led projects',
+      'Established a sponsor network to fund mentee projects through cloud credit allocations'
     ]
   }
 ];
@@ -68,31 +89,39 @@ export const experiences: Experience[] = [
 export const education: Education[] = [
   {
     id: 'edu-1',
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of California',
-    location: 'Berkeley, CA',
-    startDate: '2012-09',
-    endDate: '2016-05',
-    description: 'Graduated with honors. Focused on software engineering and web development.'
+    degree: 'B.S. in Computer Science',
+    institution: 'Purdue University',
+    location: 'West Lafayette, IN',
+    startDate: '2017-09',
+    endDate: '2021-05',
+    description: 'Focused on software engineering and system design.'
   }
 ];
 
 export const skills: Skill[] = [
   {
     category: 'Programming Languages',
-    items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'HTML', 'CSS']
+    items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'C', 'C++', 'C#', 'SQL', 'HTML', 'CSS', 'GraphQL', 'Bash']
   },
   {
     category: 'Frameworks & Libraries',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'Redux']
+    items: ['React', 'Next.js', 'Node.js', 'Django', 'AWS AppSync']
   },
   {
-    category: 'Tools & Platforms',
-    items: ['Git', 'GitHub', 'Docker', 'AWS', 'Vercel', 'Netlify']
+    category: 'AWS Services',
+    items: ['Lambda', 'API Gateway', 'CloudFront', 'Bedrock', 'DynamoDB', 'CloudWatch', 'EC2']
   },
   {
     category: 'Databases',
-    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase']
+    items: ['MongoDB', 'MySQL', 'DynamoDB']
+  },
+  {
+    category: 'Tools & Platforms',
+    items: ['Git', 'AWS', 'Ollama', 'Node']
+  },
+  {
+    category: 'Languages',
+    items: ['English (Fluent)', 'Mandarin Chinese (Intermediate)']
   }
 ];
 

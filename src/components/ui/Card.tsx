@@ -24,7 +24,7 @@ export default function Card({ title, description, imageSrc, link, tags }: CardP
         </div>
       )}
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="mb-2 text-xl font-bold">{title}</h3>
+        <h3 className="mb-2 text-xl font-bold dark:text-white">{title}</h3>
         <p className="mb-4 flex-1 text-gray-600 dark:text-gray-300">{description}</p>
         {tags && tags.length > 0 && (
           <div className="mb-4 flex flex-wrap gap-2">
