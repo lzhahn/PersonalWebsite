@@ -59,10 +59,11 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-md">
-                {/* Placeholder for profile image */}
-                <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                  <span className="text-6xl font-bold">LH</span>
-                </div>
+                <img 
+                  src="/images/me.jpeg" 
+                  alt="Lucas Hahn" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -92,8 +93,8 @@ export default function Home() {
                     <div className="md:w-16 flex-shrink-0 flex items-start justify-center">
                       <HoverCard.Root>
                         <HoverCard.Trigger asChild>
-                          <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center cursor-pointer">
-                            <span className="text-xl font-bold text-gray-500 dark:text-gray-400">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900 rounded-full flex items-center justify-center cursor-pointer shadow-md hover:shadow-lg transition-shadow">
+                            <span className="text-xl font-bold text-white">
                               {project.title.charAt(0)}
                             </span>
                           </div>
@@ -104,8 +105,8 @@ export default function Home() {
                             sideOffset={5}
                           >
                             <div className="flex flex-col gap-2">
-                              <div className="h-24 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                                <span className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+                              <div className="h-24 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900 rounded-md flex items-center justify-center">
+                                <span className="text-2xl font-bold text-white">
                                   {project.title}
                                 </span>
                               </div>
