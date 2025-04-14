@@ -5,26 +5,12 @@ import { getAllSkills } from "@/lib/data/resume";
 import BackgroundPattern from "@/components/BackgroundPattern";
 import * as HoverCard from '@radix-ui/react-hover-card';
 import * as Tabs from '@radix-ui/react-tabs';
-import * as Dialog from '@radix-ui/react-dialog';
 import { useState } from 'react';
 
 export default function Home() {
   // Get featured projects and skills
   const featuredProjects = getAllProjects().slice(0, 3);
   const skills = getAllSkills();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real application, you would handle the form submission here
-    console.log({ name, email, message });
-    // Reset form
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -45,7 +31,7 @@ export default function Home() {
                 Software Engineer & Web Developer
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl">
-                I build responsive, user-friendly web applications with modern technologies.
+                I build responsive, user-friendly applications with modern technologies.
                 Passionate about creating clean, efficient, and accessible digital experiences.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
@@ -75,14 +61,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
+      {/* Experience Section */}
       <section id="projects" className="py-16 relative border-t border-gray-100 dark:border-gray-800">
         {/* Minimalist background */}
         <div className="absolute inset-0 bg-white dark:bg-gray-900 -z-10"></div>
         
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 dark:text-white">Featured Projects</h2>
+            <h2 className="text-3xl font-bold mb-4 dark:text-white">Experience</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">Some of my recent work</p>
           </div>
           
@@ -207,101 +193,32 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white dark:text-white">Interested in working together?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            I&apos;m currently available for freelance work and open to new opportunities.
+            Find more about me at the social media below.
           </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center max-w-md mx-auto">
-            <Dialog.Root>
-              <Dialog.Trigger asChild>
-                <button className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-600 rounded-md font-medium transition-colors inline-block w-full md:w-auto">
-                  Contact Me
-                </button>
-              </Dialog.Trigger>
-              <Dialog.Portal>
-                <Dialog.Overlay className="fixed inset-0 bg-black/50 data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut" />
-                <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-[90vw] max-w-md max-h-[85vh] overflow-y-auto data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut">
-                  <Dialog.Title className="text-xl font-bold mb-4 dark:text-white">Get in Touch</Dialog.Title>
-                  <Dialog.Description className="text-gray-600 dark:text-gray-300 mb-6">
-                    Fill out the form below and I&apos;ll get back to you as soon as possible.
-                  </Dialog.Description>
-                  
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        rows={4}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="flex justify-end gap-3 mt-6">
-                      <Dialog.Close asChild>
-                        <button type="button" className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                          Cancel
-                        </button>
-                      </Dialog.Close>
-                      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-                        Send Message
-                      </button>
-                    </div>
-                  </form>
-                  
-                  <Dialog.Close asChild>
-                    <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" aria-label="Close">
-                      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
-                      </svg>
-                    </button>
-                  </Dialog.Close>
-                </Dialog.Content>
-              </Dialog.Portal>
-            </Dialog.Root>
-            
+          <div className="flex gap-6 justify-center items-center">
             <a 
               href="https://github.com/lzhahn/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-transparent hover:bg-white/10 text-white border border-white rounded-md font-medium transition-colors inline-block w-full md:w-auto"
+              className="p-3 bg-transparent hover:bg-white/10 text-white border border-white rounded-full font-medium transition-colors inline-flex items-center justify-center w-12 h-12 md:w-12 md:h-12"
+              aria-label="GitHub"
             >
-              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
             </a>
             <a 
               href="https://www.linkedin.com/in/lahahn/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-transparent hover:bg-white/10 text-white border border-white rounded-md font-medium transition-colors inline-block w-full md:w-auto"
+              className="p-3 bg-transparent hover:bg-white/10 text-white border border-white rounded-full font-medium transition-colors inline-flex items-center justify-center w-12 h-12 md:w-12 md:h-12"
+              aria-label="LinkedIn"
             >
-              LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
             </a>
           </div>
         </div>

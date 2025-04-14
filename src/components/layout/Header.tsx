@@ -24,7 +24,7 @@ export default function Header() {
             <NavigationMenu.Item>
               <NavigationMenu.Link asChild>
                 <a href="#projects" className="hover:text-blue-500 transition-colors dark:text-white">
-                  <Text size="2">Projects</Text>
+                  <Text size="2">Experience</Text>
                 </a>
               </NavigationMenu.Link>
             </NavigationMenu.Item>
