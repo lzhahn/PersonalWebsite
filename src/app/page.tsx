@@ -6,8 +6,7 @@ import BackgroundPattern from "@/components/BackgroundPattern";
 import * as HoverCard from '@radix-ui/react-hover-card';
 import * as Tabs from '@radix-ui/react-tabs';
 import * as Dialog from '@radix-ui/react-dialog';
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 export default function Home() {
   // Get featured projects and skills
@@ -16,46 +15,15 @@ export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-    
-    // EmailJS service, template, and user IDs should be set in environment variables
-    // For development, you can hardcode them here temporarily
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'YOUR_USER_ID';
-    
-    // Prepare template parameters
-    const templateParams = {
-      to_email: 'lazarhahn@gmail.com',
-      from_name: name,
-      from_email: email,
-      message: message,
-    };
-
-    // Send email using EmailJS
-    emailjs.send(serviceId, templateId, templateParams, userId)
-      .then((response) => {
-        console.log('Email sent successfully:', response);
-        setSubmitStatus('success');
-        // Reset form
-        setName('');
-        setEmail('');
-        setMessage('');
-      })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-        setSubmitStatus('error');
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+    // In a real application, you would handle the form submission here
+    console.log({ name, email, message });
+    // Reset form
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -256,7 +224,7 @@ export default function Home() {
                     Fill out the form below and I&apos;ll get back to you as soon as possible.
                   </Dialog.Description>
                   
-                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Name
@@ -302,26 +270,10 @@ export default function Home() {
                           Cancel
                         </button>
                       </Dialog.Close>
-                      <button 
-                        type="submit" 
-                        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+                        Send Message
                       </button>
                     </div>
-                    
-                    {submitStatus === 'success' && (
-                      <div className="mt-4 p-3 bg-green-100 text-green-800 rounded-md">
-                        Your message has been sent successfully! I'll get back to you soon.
-                      </div>
-                    )}
-                    
-                    {submitStatus === 'error' && (
-                      <div className="mt-4 p-3 bg-red-100 text-red-800 rounded-md">
-                        There was an error sending your message. Please try again later.
-                      </div>
-                    )}
                   </form>
                   
                   <Dialog.Close asChild>
