@@ -31,14 +31,16 @@ export default function FadeInSection({
       }
     });
     
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    const currentRef = domRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
     }
     
     return () => {
-      if (domRef.current) observer.unobserve(domRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
-  }, [delay]);
+  }, [delay, domRef]);
 
   return (
     <div

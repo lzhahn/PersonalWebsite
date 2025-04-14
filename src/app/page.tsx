@@ -6,7 +6,6 @@ import BackgroundPattern from "@/components/BackgroundPattern";
 import FadeInSection from "@/components/FadeInSection";
 import * as HoverCard from '@radix-ui/react-hover-card';
 import * as Tabs from '@radix-ui/react-tabs';
-import { useState } from 'react';
 
 export default function Home() {
   // Get featured projects and skills
